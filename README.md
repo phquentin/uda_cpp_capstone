@@ -2,6 +2,11 @@
 
 ## Dependencies
 
+- ROS including turtlesim package
+- cmake >= 2.8.3
+- make >= 4.1
+- gcc/g++ >= 5.4
+
 ## Building & Running Instructions
 
 ### Building
