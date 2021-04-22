@@ -16,7 +16,7 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(Move src/MovementNode.cpp src/CircleNode.cpp src/Move.cpp)
+add_executable(Move src/MovementNode.cpp src/ShapeMovement.cpp src/Move.cpp)
 target_link_libraries(Move ${catkin_LIBRARIES})
 
 

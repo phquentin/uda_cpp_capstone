@@ -10,7 +10,7 @@ class MovementNode
 {
 public:
     MovementNode(int hz, int queue_size);
-    virtual void publish(){};
+    virtual void publish_move(){};
 protected:
     ros::NodeHandle _n;
     ros::Publisher _pub;
