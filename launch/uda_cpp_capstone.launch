@@ -1,4 +1,6 @@
 <launch>
   <node name="sim" pkg="turtlesim" type="turtlesim_node" output="screen"/>
-  <node name="move_node" pkg="uda_cpp_capstone" type="Move" output="screen" launch-prefix="gnome-terminal --command"/>
+  <node name="move_node" pkg="uda_cpp_capstone" type="Move" output="screen" />
 </launch>
+
+
