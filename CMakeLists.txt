@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
+add_compile_options(-std=c++11)
 project(uda_cpp_capstone)
 
 find_package(catkin REQUIRED COMPONENTS

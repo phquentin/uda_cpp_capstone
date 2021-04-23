@@ -1,6 +1,11 @@
+#include <random>
 #include "ros/ros.h"
 
 #include "ShapeMovement.h"
+
+std::random_device rd;
+std::mt19937 eng(rd());
+std::uniform_int_distribution<> distr(-2,2);
 
 SpiralNode::SpiralNode(int hz, int queue) : MovementNode(hz,queue){
 
@@ -22,10 +27,9 @@ void SpiralNode::publish_move()
     _loop_rate.sleep();
 }
 
-SquareNode::SquareNode(int hz, int queue) : MovementNode(hz,queue){
-    _ts_count = 0;
-
-    _vel.linear.x = 0;
+RandomNode::RandomNode(int hz, int queue) : MovementNode(hz,queue){
+    
+    _vel.linear.x = 1;
     _vel.linear.y = 0;
     _vel.linear.z = 0;
 
@@ -34,36 +38,11 @@ SquareNode::SquareNode(int hz, int queue) : MovementNode(hz,queue){
     _vel.angular.z = 0;
 };
 
-void SquareNode::publish_move()
-{
-    if(_ts_count == 4)
-    {
-        _ts_count = 0;
-    }
-
-    if(_ts_count == 0)
-    {
-        _vel.linear.x = 1;
-    }
-    if(_ts_count == 1)
-    {
-        _vel.linear.y = 1;
-    }
-    if(_ts_count == 2)
-    {
-        _vel.linear.x = -1;
-    }
-    if(_ts_count == 3)
-    {
-        _vel.linear.y = -1;
-    }
+void RandomNode::publish_move()
+{   
+    _vel.angular.z = distr(eng);
    
     _pub.publish(_vel);
-
-    _vel.linear.x = 0;
-    _vel.linear.y = 0;
-    _vel.linear.z = 0;
-    _ts_count++;
 
     _loop_rate.sleep();
 }

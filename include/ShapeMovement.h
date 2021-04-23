@@ -11,14 +11,12 @@ public:
     void publish_move();
 };
 
-class SquareNode : public MovementNode
+class RandomNode : public MovementNode
 {
 public:
-    SquareNode (int hz, int queue);
+    RandomNode (int hz, int queue);
     void publish_move();
 
-private:
-    int _ts_count;
 };
 
 #endif
