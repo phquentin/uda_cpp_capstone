@@ -1,5 +1,7 @@
 ## Description
 
+This repository contains the implementation of the ros package uda_cpp_capstone with a "move" node to pass the final project of the udacity c++ nanodegree programm. The implemented ros package starts a turtlebot simulation and makes the turtle move in form of given geomtric shapes according to a user input. For detailed information see the sections [Expected Behavior](#expected-behavior) and [File & Class Strucutre](#file-class-strucutre).
+
 ## Dependencies
 
 - ROS including turtlesim package
@@ -25,8 +27,12 @@
 3. Run the launch file of the package: `roslaunch uda_cpp_capstone uda_cpp_cappstone.launch`
 4. Follow the instructions within the opened terminal
 
-## Expected Behavior
+## <a name="expected-behavior"></a> Expected Behavior
 
-## File & Class Structure
+When the launch file uda_cpp_cappstone.launch is executed it starts a ros master, a Move node with the name move_node of the uda_cpp_capstone package and a turtlesim_node with the name sim of the ros turtlesim package. Furhtermore, within the opened terminal a user input is requested. If the user inputs 1 the move_node publishes the inputs for a square movement to the topic /turtle1/cmd_vel to which the sim node is subscribed, so that the turtle will do a square momvement. If the user inputs 2 the turtle will spiral movement respectivley.
+
+## <a name="file-class-strucutre"></a> File & Class Structure
 
 ## Addressed Rubric Points
+
+
