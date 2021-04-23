@@ -1,6 +1,6 @@
 ## Description
 
-This repository contains the implementation of the ros package uda_cpp_capstone with a "move" node to pass the final project of the udacity c++ nanodegree programm. The implemented ros package starts a turtlebot simulation and makes the turtle move in form of given geomtric shapes according to a user input. For detailed information see the sections [Expected Behavior](#expected-behavior) and [File & Class Strucutre](#file-class-strucutre).
+This repository contains the implementation of the ros package uda_cpp_capstone with a "move" node to pass the final project of the udacity c++ nanodegree programm. The implemented ros package starts a turtlebot simulation and makes the turtle move in form of given geomtric shapes according to a user input. For detailed information see the sections [Expected Behavior](#expected-behavior) and [File & Class Structure](#file-class-strucutre).
 
 ## Dependencies
 
@@ -34,5 +34,19 @@ When the launch file uda_cpp_cappstone.launch is executed it starts a ros master
 ## <a name="file-class-strucutre"></a> File & Class Structure
 
 ## Addressed Rubric Points
+
+### Loops, Functions, I/O
+
+- The project demonstrates an understanding of C++ functions and control structures: Find loops and if statements in Move.cpp, functions in ShapeMovement.cpp
+- The project accepts user input and processes the input: See user requested and processed input in Move.cpp
+
+### Object Oriented Programming
+
+- The project uses Object Oriented Programming techniques: See class SquareNode and SpiralNode with their respective class attributes and functions in ShapeMovement.h and ShapeMovement.cpp
+- Classes use appropriate access specifiers for class members: See parent class MovementNode in MovementNode.h, class SpiralNode and SquareNode in ShapeMovement.h
+- Classes follow an appropriate inheritance hierarchy: Class SpiralNode and SquareNode are child classes of abstract class MovementNode. They specify the movement according to their name and inherit the same ros attributes. See MovementNode.h/cpp and ShapeMovement.h/cpp
+- Derived class functions override virtual base class functions: The derived class functions publish_move() in class SquareNode and class SpiralNode override the virtual function publish_move() of the parent class. See MovementNode.h and ShapeMovement.h 
+
+
 
 
